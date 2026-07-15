@@ -369,6 +369,74 @@
   }
 </style>
 <script data-goatcounter="https://ucheyy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style id="space-theme">
+  :root {
+    --bg: #030308;
+    --surface: #080a14;
+    --surface-2: #0d1020;
+    --surface-3: #13182e;
+    --border: #1a1f3a;
+    --ink: #E8ECF4;
+    --ink-dim: #7a82a0;
+    --ink-faint: #4a5070;
+    --accent: #00E5FF;
+    --accent-dim: #00B8D4;
+    --accent-glow: rgba(0, 229, 255, 0.3);
+    --success: #69F0AE;
+    --1688: #FF6A00;
+    --1688-dim: #CC5500;
+    --1688-glow: rgba(255, 106, 0, 0.2);
+    --temu: #00E5FF;
+    --temu-glow: rgba(0, 229, 255, 0.2);
+    --nebula-1: #7B2D8E;
+    --nebula-2: #1A237E;
+    --nebula-3: #006064;
+  }
+  body[data-audience="all"] { --bg: #030308; --surface: #080a14; --surface-2: #0d1020; --border: #1a1f3a; }
+  body[data-audience="men"] { --bg: #02040a; --surface: #060a18; --surface-2: #0a1024; --border: #121a36; }
+  body[data-audience="women"] { --bg: #0a0410; --surface: #140a1e; --surface-2: #2a1a2e; --border: #3a2a3a; }
+  .ambient-bg { background: radial-gradient(ellipse at 20% 20%, rgba(123,45,142,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(26,35,126,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(0,96,100,0.05) 0%, transparent 60%); }
+  .ambient-orb:nth-child(1) { width: 500px; height: 500px; background: radial-gradient(circle, var(--nebula-1) 0%, transparent 70%); top: -150px; right: -150px; filter: blur(100px); opacity: 0.15; animation: nebulaDrift 30s ease-in-out infinite; }
+  .ambient-orb:nth-child(2) { width: 400px; height: 400px; background: radial-gradient(circle, var(--nebula-2) 0%, transparent 70%); bottom: 10%; left: -120px; filter: blur(100px); opacity: 0.12; animation-delay: -10s; animation: nebulaDrift 35s ease-in-out infinite; }
+  .ambient-orb:nth-child(3) { width: 350px; height: 350px; background: radial-gradient(circle, var(--nebula-3) 0%, transparent 70%); bottom: -80px; right: 15%; filter: blur(100px); opacity: 0.1; animation-delay: -20s; animation: nebulaDrift 28s ease-in-out infinite; }
+  @keyframes nebulaDrift { 0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); } 25% { transform: translate(40px, -30px) scale(1.15) rotate(5deg); } 50% { transform: translate(-30px, 40px) scale(0.9) rotate(-3deg); } 75% { transform: translate(20px, 20px) scale(1.05) rotate(2deg); } }
+  .starfield { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .star { position: absolute; background: white; border-radius: 50%; animation: twinkle var(--twinkle-duration) ease-in-out infinite; box-shadow: 0 0 var(--star-glow-size) var(--star-glow-color); }
+  @keyframes twinkle { 0%, 100% { opacity: var(--min-opacity); transform: scale(1); } 50% { opacity: var(--max-opacity); transform: scale(1.5); } }
+  .shooting-star { position: fixed; width: 100px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); border-radius: 50%; pointer-events: none; z-index: 1; animation: shoot 3s ease-out forwards; opacity: 0; }
+  @keyframes shoot { 0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; } 100% { transform: translateX(500px) translateY(500px) rotate(-45deg); opacity: 0; } }
+  .scanlines { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 2; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 229, 255, 0.015) 2px, rgba(0, 229, 255, 0.015) 4px); }
+  .vignette { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 1; background: radial-gradient(ellipse at center, transparent 40%, rgba(3,3,8,0.6) 100%); }
+  .eyebrow { color: var(--accent); }
+  .eyebrow::before { background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+  h1 em { color: var(--accent); text-shadow: 0 0 30px var(--accent-glow); }
+  .stat-num { color: var(--accent); text-shadow: 0 0 15px var(--accent-glow); }
+  .scroll-progress { background: linear-gradient(90deg, var(--accent), #7B2D8E); box-shadow: 0 0 15px var(--accent-glow); }
+  .platform-btn.active[data-platform="temu"] { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 25px var(--temu-glow); }
+  .platform-btn.active[data-platform="1688"] { border-color: var(--1688); color: var(--1688); box-shadow: 0 0 25px var(--1688-glow); }
+  .aud-btn.active { background: var(--accent); color: var(--bg); box-shadow: 0 0 20px var(--accent-glow); }
+  .cat-nav-item.active { border-color: var(--accent); color: var(--accent); background: rgba(0, 229, 255, 0.08); box-shadow: 0 0 15px rgba(0, 229, 255, 0.1); }
+  .favorites { background: linear-gradient(180deg, rgba(0, 229, 255, 0.06) 0%, rgba(0, 229, 255, 0.01) 100%); border-color: rgba(0, 229, 255, 0.2); }
+  .fav-head { color: var(--accent); }
+  .fav-head svg { fill: var(--accent); filter: drop-shadow(0 0 5px var(--accent-glow)); }
+  .cat-num { color: var(--accent); text-shadow: 0 0 8px var(--accent-glow); }
+  .chip:hover { border-color: rgba(0, 229, 255, 0.2); box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 20px rgba(0, 229, 255, 0.08); }
+  .chip.copied { border-color: var(--success); background: rgba(105, 240, 174, 0.06); box-shadow: 0 0 25px rgba(105, 240, 174, 0.15); }
+  .chip-fav:hover { color: var(--accent); background: rgba(0, 229, 255, 0.08); }
+  .chip-fav.on { color: var(--accent); }
+  .chip-fav.on svg { fill: var(--accent); stroke: var(--accent); filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5)); }
+  .chip-copy-btn { background: rgba(105, 240, 174, 0.08); color: var(--success); border-color: rgba(105, 240, 174, 0.3); }
+  .chip-copy-btn:hover { background: rgba(105, 240, 174, 0.15); border-color: rgba(105, 240, 174, 0.5); box-shadow: 0 0 15px rgba(105, 240, 174, 0.1); }
+  .chip-shop-btn { background: rgba(0, 229, 255, 0.08); color: var(--accent); border-color: rgba(0, 229, 255, 0.3); }
+  .chip-shop-btn:hover { background: rgba(0, 229, 255, 0.15); border-color: rgba(0, 229, 255, 0.5); box-shadow: 0 0 15px rgba(0, 229, 255, 0.1); }
+  .chip-1688-btn { background: rgba(255, 106, 0, 0.08); color: var(--1688); border-color: rgba(255, 106, 0, 0.3); }
+  .chip-1688-btn:hover { background: rgba(255, 106, 0, 0.15); border-color: rgba(255, 106, 0, 0.5); box-shadow: 0 0 15px rgba(255, 106, 0, 0.1); }
+  .credit a { color: var(--accent); }
+  .credit a:hover { text-shadow: 0 0 10px var(--accent-glow); }
+  .toast { border-color: rgba(0, 229, 255, 0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 30px rgba(0, 229, 255, 0.1); }
+</style>
+<base target="_blank">
 </head>
 <body>
 
@@ -378,6 +446,10 @@
   <div class="ambient-orb"></div>
 </div>
 <div class="noise-overlay"></div>
+<div class="starfield" id="starfield"></div>
+<div class="vignette"></div>
+<div class="scanlines"></div>
+
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <div class="hero">
@@ -412,11 +484,8 @@
   </button>
 </div>
 
-<div class="coupon-banner" role="region" aria-label="Discount code">
-  <span class="coupon-icon">&#127873;</span>
-  <span class="coupon-text"><strong>30% off</strong> your first Temu order with code <span class="coupon-code">ald753977</span></span>
-  <button class="coupon-copy-btn" id="couponCopyBtn" aria-label="Copy discount code">Copy code</button>
-</div>
+
+
 
 <div class="sticky-header" id="stickyHeader">
   <div class="audience-toggle" role="group" aria-label="Filter by audience">
@@ -1170,38 +1239,7 @@
     document.getElementById('stickyHeader').classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 
-  const couponCopyBtn = document.getElementById('couponCopyBtn');
-  if (couponCopyBtn) {
-    couponCopyBtn.addEventListener('click', function() {
-      const code = 'ald753977';
-      const doCopy = navigator.clipboard && navigator.clipboard.writeText
-        ? navigator.clipboard.writeText(code)
-        : new Promise(function(resolve, reject) {
-            const ta = document.createElement('textarea');
-            ta.value = code;
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy'); resolve(); }
-            catch (e) { reject(e); }
-            document.body.removeChild(ta);
-          });
-
-      doCopy.then(function() {
-        couponCopyBtn.classList.add('copied');
-        couponCopyBtn.textContent = 'Copied';
-        showToast('Code copied: ald753977');
-        trackEvent('coupon-copy', 'Coupon code copied');
-        setTimeout(function() {
-          couponCopyBtn.classList.remove('copied');
-          couponCopyBtn.textContent = 'Copy code';
-        }, 2000);
-      }).catch(function() {
-        showToast('Copy failed');
-      });
-    });
-  }
+  
 
   // Update total combos count
   let totalChips = 0;
@@ -1217,6 +1255,39 @@
   updatePlatformUI();
   applyFilters();
   initCategoryTracking();
+
+
+  // === INTERGALACTIC STARFIELD ===
+  (function initStarfield() {
+    const starfield = document.getElementById('starfield');
+    if (!starfield) return;
+    const starCount = 150;
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 2.5 + 0.5;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.setProperty('--twinkle-duration', (Math.random() * 3 + 2) + 's');
+      star.style.setProperty('--min-opacity', (Math.random() * 0.3 + 0.1));
+      star.style.setProperty('--max-opacity', (Math.random() * 0.5 + 0.7));
+      star.style.setProperty('--star-glow-size', (Math.random() * 4 + 2) + 'px');
+      star.style.setProperty('--star-glow-color', 'rgba(0, 229, 255, ' + (Math.random() * 0.3 + 0.1) + ')');
+      star.style.animationDelay = (Math.random() * 5) + 's';
+      starfield.appendChild(star);
+    }
+    function spawnShootingStar() {
+      const s = document.createElement('div');
+      s.className = 'shooting-star';
+      s.style.left = (Math.random() * 80) + '%';
+      s.style.top = (Math.random() * 50) + '%';
+      document.body.appendChild(s);
+      setTimeout(function() { s.remove(); }, 3000);
+    }
+    setInterval(spawnShootingStar, Math.random() * 4000 + 3000);
+  })();
 </script>
 
 </body>
